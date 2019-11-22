@@ -1,0 +1,147 @@
+{
+	"build_systems":
+	[
+		{
+			"cmd":
+			[
+				"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat",
+				"-vcvars_ver=14.2",
+				"&&",
+				"ninja",
+				"-k",
+				"20"
+			],
+			"file_regex": "^[ ]*(.+?)\\(([0-9]+)\\): (.*)$",
+			"name": "{{ cookiecutter.project_name }} (Ninja-Debug)",
+			"variants":
+			[
+				{
+					"cmd":
+					[
+						"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat",
+						"-vcvars_ver=14.2",
+						"&&",
+						"echo",
+						"ninja",
+						"-k",
+						"20",
+						"${file}^^",
+						"&&",
+						"ninja",
+						"-k",
+						"20",
+						"${file}^^"
+					],
+					"name": "Current source",
+					"selector": "source.c++"
+				}
+			],
+			"working_dir": "C:/builds/{{ cookiecutter.project_name }}-debug"
+		},
+		{
+			"cmd":
+			[
+				"pyside2-uic",
+				"--output",
+				"${file_path}/ui_${file_base_name}.py",
+				"${file}"
+			],
+			"file_patterns":
+			[
+				"*.ui"
+			],
+			"name": "pyside2-uic",
+			"variants":
+			[
+				{
+					"cmd":
+					[
+						"pyside2-uic",
+						"--help"
+					],
+					"name": "pyside2-uic (help)"
+				},
+				{
+					"cmd":
+					[
+						"pyside2-uic",
+						"--preview",
+						"${file}"
+					],
+					"name": "pyside2-uic (preview)"
+				}
+			],
+			"working_dir": "$folder"
+		},
+		{
+			"cmd":
+			[
+				"pyside2-rcc",
+				"${file}",
+				"-o",
+				"${file_path}/${file_base_name}.py"
+			],
+			"file_patterns":
+			[
+				"*.qrc"
+			],
+			"name": "pyside2-rcc",
+			"variants":
+			[
+				{
+					"cmd":
+					[
+						"pyside2-rcc",
+						"-h"
+					],
+					"name": "pyside2-rcc (help)"
+				}
+			],
+			"working_dir": "$folder"
+		}
+	],
+	"folders":
+	[
+		{
+			"folder_exclude_patterns":
+			[
+				"build"
+			],
+			"path": "."
+		},
+		{
+			"name": "Substance Designer Python API",
+			"path": "C:/Program Files/Allegorithmic/Substance Designer/resources/python"
+		},
+		{
+			"file_include_patterns":
+			[
+				"pip.ini"
+			],
+			"folder_exclude_patterns":
+			[
+				"*"
+			],
+			"name": "pip.ini",
+			"path": "{{ cookiecutter.user_home }}/AppData/Roaming/pip"
+		},
+		{
+			"file_include_patterns":
+			[
+				".pypirc"
+			],
+			"folder_exclude_patterns":
+			[
+				"*"
+			],
+			"name": ".pypirc",
+			"path": "{{ cookiecutter.user_home }}"
+		},
+		{
+			"path": "{{ cookiecutter.user_home }}/AppData/Local/Programs/Python/Python37/Lib/site-packages/pysbs"
+		}
+	],
+	"settings":
+	{
+	}
+}

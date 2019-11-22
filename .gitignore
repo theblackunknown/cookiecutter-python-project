@@ -1,0 +1,17 @@
+/build
+/dist
+/env-*
+/*.egg-info
+
+/Pipfile
+/poetry.lock
+/pyproject.toml
+
+*.sublime-workspace
+__pycache__
+
+*.lib
+*.exe
+*.dll
+*.suo
+.vs

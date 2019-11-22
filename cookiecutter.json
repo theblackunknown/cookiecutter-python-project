@@ -1,0 +1,26 @@
+{
+    "full_name": "<your name>",
+
+    "email": "<your email>",
+    "user_home": "<path to home directory>",
+    "github_url": "<path to your GitHub main website>",
+    "github_username": "<your GitHub username>",
+    "remote": "origin",
+    "branch": "master",
+
+    "project_name": "<project name>",
+    "project_description": "<project project_description>",
+    "project_keywords": "<comma-separated list of keywords>",
+    "project_version": "0.0.1",
+
+    "repository_name": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
+
+    "pypi_repository_name": "pypi",
+
+    "package_name": "{{ cookiecutter.repository_name|lower|replace('-', '') }}",
+
+    "year": "2019",
+
+
+    "license": ["MIT", "BSD-3", "GNU GPL v3.0", "Apache Software License 2.0"]
+}
