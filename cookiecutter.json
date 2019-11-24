@@ -15,7 +15,7 @@
 
     "repository_name": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
 
-    "pypi_repository_name": "pypi",
+    "pypi_repository_name": "testpypi",
 
     "package_name": "{{ cookiecutter.repository_name|lower|replace('-', '') }}",
 
