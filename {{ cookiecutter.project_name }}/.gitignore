@@ -3,6 +3,8 @@
 /env-*
 /*.egg-info
 
+.eggs
+
 /Pipfile
 /poetry.lock
 /pyproject.toml
